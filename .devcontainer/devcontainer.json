@@ -1,9 +1,6 @@
 {
   "name": "Interview Sandbox (Java 21 + Gradle + H2)",
   "image": "mcr.microsoft.com/devcontainers/java:21",
-  "features": {
-    "ghcr.io/devcontainers/features/gradle:1": { "version": "8.8" }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,10 +11,7 @@
     }
   },
   "forwardPorts": [8080],
-  "portsAttributes": {
-    "8080": { "label": "App", "onAutoForward": "openBrowser" }
-  },
-  "containerEnv": {
-    "SPRING_PROFILES_ACTIVE": "h2"
-  }
+  "portsAttributes": { "8080": { "label": "App", "onAutoForward": "openBrowser" } },
+  "containerEnv": { "SPRING_PROFILES_ACTIVE": "h2" },
+  "postCreateCommand": "bash -lc 'curl -s https://get.sdkman.io | bash && source $HOME/.sdkman/bin/sdkman-init.sh && sdk install gradle 8.8'"
 }
