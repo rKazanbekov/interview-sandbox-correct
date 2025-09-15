@@ -1,8 +1,7 @@
 {
   "name": "Interview Sandbox (Java 21 + Gradle + H2)",
-  "build": { "dockerfile": "Dockerfile" },
+  "image": "mcr.microsoft.com/devcontainers/java:21",
   "features": {
-    "ghcr.io/devcontainers/features/java:1": { "version": "21" },
     "ghcr.io/devcontainers/features/gradle:1": { "version": "8.8" }
   },
   "customizations": {
