@@ -18,22 +18,13 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot Web (REST API)
     implementation("org.springframework.boot:spring-boot-starter-web")
-
-    // JPA + Hibernate
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    // Валидация (@NotNull, @Email и т.п.)
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-
-    // H2 Database (in-memory DB)
+    implementation("org.springframework.boot:spring-boot-starter-validation") // опционально, но полезно
     runtimeOnly("com.h2database:h2")
 
-    // Swagger / OpenAPI UI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 
-    // Тестирование
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
