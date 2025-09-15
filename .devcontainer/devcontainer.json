@@ -1,0 +1,24 @@
+{
+  "name": "Interview Sandbox (Java 21 + Gradle + H2)",
+  "build": { "dockerfile": "Dockerfile" },
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": { "version": "21" },
+    "ghcr.io/devcontainers/features/gradle:1": { "version": "8.8" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "App", "onAutoForward": "openBrowser" }
+  },
+  "containerEnv": {
+    "SPRING_PROFILES_ACTIVE": "h2"
+  }
+}
