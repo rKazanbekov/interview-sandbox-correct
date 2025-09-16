@@ -1,0 +1,28 @@
+{
+  "name": "Interview Sandbox (Java 21 + Gradle + H2)",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "mhutchie.git-graph",
+        "ms-vsliveshare.vsliveshare"
+      ]
+    }
+  },
+
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "App", "onAutoForward": "openBrowser" }
+  },
+
+  "containerEnv": { "SPRING_PROFILES_ACTIVE": "h2" },
+
+  "mounts": [
+    "source=gradle-cache,target=/home/vscode/.gradle,type=volume"
+  ],
+
+  "postCreateCommand": "chmod +x ./gradlew || true && ./gradlew --version"
+}
