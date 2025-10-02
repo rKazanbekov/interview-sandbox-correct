@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public User create(@RequestBody User u) {
         return repo.save(u);
     }
